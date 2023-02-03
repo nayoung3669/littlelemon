@@ -1,25 +1,22 @@
 import './App.css';
 import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Main from './components/Main';
+import Main from './components/main/Main';
 
 function App() {
 
-  const toggleBtn = document.querySelector('.hamburger');
-  const menu = document.querySelector('.navbar_menu');
-
-  toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  })
-
   return (
     <div className="App">
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
+      <ChakraProvider>
+        <Header />
+        <Nav />
+        <Main />
+        <Footer />
+      </ChakraProvider>
     </div>
   );
 }
