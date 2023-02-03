@@ -1,4 +1,5 @@
 import { Heading, Box, Text } from "@chakra-ui/react";
+import './main/'
 
 export default function HeroSection() {
     return (
