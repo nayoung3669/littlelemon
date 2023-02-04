@@ -1,4 +1,12 @@
+* {
+  font-family: "Advent Pro", sans-serif;
+}
+
 .heroSection {
   display: flex;
-  background-color: blueviolet;
+  background-color: rgb(73, 94, 87);
+}
+
+.heroSection_description {
+  color: white;
 }

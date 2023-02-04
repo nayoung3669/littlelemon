@@ -52,6 +52,8 @@ a {
 }
 
 .navbar_menu li {
+  font-family: "Markazi Text", serif;
+  font-size: 1.2em;
   list-style: none;
   display: inline;
   padding: 8px 12px;
