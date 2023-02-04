@@ -42,8 +42,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(232, 226, 147);
-  padding: 8px 12px;
+  background-color: white;
+  padding: 20px 170px 10px 170px;
 }
 
 a {
@@ -52,11 +52,13 @@ a {
 }
 
 .navbar_menu li {
-  font-family: "Markazi Text", serif;
-  font-size: 1.2em;
+  /* font-family: "Markazi Text", serif; */
+  color: #333333;
+  font-family: "Karla", sans-serif;
+  font-size: 1em;
   list-style: none;
   display: inline;
-  padding: 8px 12px;
+  padding: 8px;
 }
 
 .hamburger {

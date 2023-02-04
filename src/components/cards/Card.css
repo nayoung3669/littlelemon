@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #edefee;
+  margin: 10px 20px 10px 20px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 10%;
+}
+
+.card > img {
+  height: 180px;
+  width: 200px;
+  border-radius: 10%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.cardHeading {
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.name {
+  color: #333333;
+  font-size: 1.1em;
+  font-family: "Markazi Text", serif;
+}
+
+.price {
+  font-family: "Markazi Text", serif;
+  font-size: 1em;
+  color: #e1916b;
+}
+
+.description {
+  font-family: "Karla", sans-serif;
+  text-align: left;
+  height: 140px;
+  padding: 10px;
+  line-height: 15px;
+}
+
+a {
+  padding: 0px 0px 10px 10px;
+}
