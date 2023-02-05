@@ -5,8 +5,9 @@
   background-color: #edefee;
   margin: 10px 20px 10px 20px;
   padding: 10px;
-  width: 400px;
+  /* max-width: 300px; */
   border-radius: 10%;
+  flex: auto;
 }
 
 .card > img {
@@ -41,10 +42,19 @@
   font-family: "Karla", sans-serif;
   text-align: left;
   height: 140px;
+  width: 200px;
   padding: 10px;
   line-height: 15px;
 }
 
 a {
   padding: 0px 0px 10px 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .card {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
 }

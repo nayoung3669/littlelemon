@@ -5,7 +5,7 @@ import hamburger from '../images/hamburger.svg';
 function Nav () {
     return (
         <div className='navbar'>
-            <a href="#home"><img src={navLogo} alt="nav logo"/></a>
+            <a href="#home"><img className='navLogo' src={navLogo} alt="nav logo" /></a>
             <ul className='navbar_menu'>
                 <a href='#home'><li> Home</li></a>
                 <a href='#about'><li> About</li></a>
