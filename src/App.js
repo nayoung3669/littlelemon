@@ -18,11 +18,11 @@ function App() {
         <Nav />
           <Routes>
             <Route path="/" element={<Homepage />}/>
-            <Route path="about" element={<About />}/>
-            <Route path="booking" element={<Booking />}/>
-            <Route path="onlineOrder" element={<OnlineOrder />}/>
+            <Route path="/about" element={<About />}/>
+            <Route path="/booking" element={<Booking />}/>
+            <Route path="/onlineOrder" element={<OnlineOrder />}/>
           </Routes>
-        <Homepage />
+        {/* <Homepage /> */}
         <Footer />
       </ChakraProvider>
     </div>
