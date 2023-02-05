@@ -5,6 +5,7 @@ import bruchetta from "../../images/bruchetta.svg";
 import lemonDessert from "../../images/lemon dessert.jpg";
 
 import Card from "../cards/Card.js";
+import './Homepage.css'
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const specials = [

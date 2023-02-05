@@ -1,6 +1,6 @@
 import { Box, Text, Button } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import './Main.css'
+import './Homepage.css'
 import mainPhoto from "../../images/restauranfood.jpg";
 
 

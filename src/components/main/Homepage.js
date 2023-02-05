@@ -1,15 +1,15 @@
 import HeroSection from "./HeroSection";
 import Hightlights from "./Highlights";
-import Testimonials from "./Testimonials";
+import CustomersSay from "./CustomersSay";
 
-export default function Main() {
+export default function Homepage() {
     
     return(
     <div className="main">
         <HeroSection />
         <Hightlights />
-        <Testimonials />
+        <CustomersSay />
     </div>
 
     )
-    }
+}

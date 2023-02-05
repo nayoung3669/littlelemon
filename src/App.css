@@ -10,7 +10,6 @@
   background-color: white;
   padding: 20px 170px 10px 170px;
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -58,7 +57,7 @@ a > img {
   .navbar_menu li {
     width: 100%;
     text-align: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 8px 12px;
   }
 
