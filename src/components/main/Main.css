@@ -16,6 +16,7 @@
     rgb(73, 94, 87) 100%
   );
   padding: 0px 170px 20px 170px;
+  width: 100%;
 }
 
 .heroSection_description {
@@ -58,6 +59,8 @@
 }
 
 .highlights {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(255, 255, 255, 0.909);
   padding: 0px 160px 20px 160px;
 }
@@ -68,12 +71,18 @@
   justify-content: space-between;
   padding: 0px 18px;
   align-items: center;
-  white-space: nowrap;
+}
+
+.onlineMenu_button {
+  align-self: baseline;
+  min-width: 150px;
 }
 
 .highlights_heading > .heading {
   font-family: "Markazi Text", serif;
   font-size: 2.8em;
+  min-width: 400px;
+  text-align: left;
 }
 
 .cards {
