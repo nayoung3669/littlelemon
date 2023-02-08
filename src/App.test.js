@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { KeyboardTwoTone, SpeakerGroupSharp } from '@material-ui/icons';
+import BookingForm from './components/booking/BookingForm';
 
 test('renders learn react link', () => {
   render(<App />);
@@ -8,3 +9,8 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+test('Renders the BookingForm heading',() => {
+  render(<BookingForm />);
+  const headingElement = screen.getByText("Reserve a table");
+  expect(headingElement).toBeInTheDocument();
+})
