@@ -20,9 +20,9 @@ function BookingForm({availableTimes}) {
             actions.resetForm();
         },
         validationSchema: yup.object({
-            date: yup.date().required("Date is required."),
-            time: yup.string().required("Time is required."),
-            guests: yup.number().required().positive().integer(),
+            date: yup.date().required("Please fill out this field."),
+            time: yup.string().required("Please fill out this field."),
+            guests: yup.number().required().positive().integer("Please fill out this field."),
         }),
     });
     const {getFieldProps} = formik;

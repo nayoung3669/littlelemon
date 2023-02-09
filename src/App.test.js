@@ -14,3 +14,10 @@ test('Renders the BookingForm heading',() => {
   const headingElement = screen.getByText("Reserve a table");
   expect(headingElement).toBeInTheDocument();
 })
+
+test("client-side validation in BookingForm", () => {
+  render(<BookingForm />)
+  const validationElement = screen.getByText("Please fill out this field.")
+  expect(validationElement).toBeInTheDocument();
+})
+
