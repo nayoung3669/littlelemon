@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import { Heading, Input, FormControl, FormLabel, FormErrorMessage, Select, VStack } from '@chakra-ui/react';
 
 
-function BookingForm({ availableTimes, submitForm, dispatch }) {
+function BookingForm({ availableTimes, submitForm}) {
     const formik = useFormik({
         initialValues: {
             date: "",

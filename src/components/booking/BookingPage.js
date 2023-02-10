@@ -4,34 +4,33 @@ import { useNavigate } from 'react-router-dom'
 import {submitAPI, fetchAPI} from './APIs'
 
 const ACTIONS = {
-    ADD_BOOKING: "ADD_BOOKING"
+    ADD_BOOKING: "ADD_BOOKING",
 }
 
-const updateTimes = (availableTimes, action) => {
-        console.log("update===")
-        console.log(action)
-        switch (action.type) {
-            case ACTIONS.ADD_BOOKING :
-                return [...availableTimes,availableTimes.pop(action.payload)];
-            default :
-                return availableTimes;
-        };
+function updateTimes(availableTimes, action) {
+    console.log("===update===")
+    switch (action.type) {
+        case ACTIONS.ADD_BOOKING :
+            return [...availableTimes,availableTimes.pop(action.payload)];
+        default :
+            return availableTimes;
     };
+};
 
-const BookingPage = () => {
+function BookingPage() {
     const date= new Date();
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(date));
     const navigate = useNavigate();
 
     function submitForm(formData) {
         if (submitAPI(formData)) {
-            console.log("submit===")
+            console.log("===submit===")
             console.log(formData.time);
             navigate("confirmation");
             dispatch({ type: ACTIONS.ADD_BOOKING, payload: formData.time})
         }
     }
-    //form reducer
+
     function initializeTimes(date) {
         return fetchAPI(date);
     }
