@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './Booking.css'
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import { Heading, Input, FormControl, FormLabel, FormErrorMessage, Select, VStack } from '@chakra-ui/react';
 
 
-function BookingForm({availableTimes}) {
+function BookingForm({ availableTimes, submitForm, dispatch }) {
     const formik = useFormik({
         initialValues: {
             date: "",
@@ -15,8 +15,7 @@ function BookingForm({availableTimes}) {
             occasion: "",
         },
         onSubmit: (values, actions) => {
-            console.log(values)
-            alert(JSON.stringify(values, null, 2))
+            submitForm({...formik.values});
             actions.resetForm();
         },
         validationSchema: yup.object({
@@ -41,7 +40,7 @@ function BookingForm({availableTimes}) {
                         <FormLabel htmlFor="res-time">Choose time</FormLabel>
                         <Select id="res-time " value={formik.values.time} onChange={formik.handleChange} {...getFieldProps("time")} placeholder='Select time' border="2px solid #495e57">
                             {availableTimes.map((time) => {
-                                return (<option value={time}>{time}</option>)
+                                return (<option value={time} key={time.toString()}>{time}</option>)
                             })}
                         </Select>
                         <FormErrorMessage>{formik.errors.time}</FormErrorMessage>

@@ -1,41 +1,47 @@
-import { useReducer } from 'react'
-import React from 'react'
+import React, { useReducer } from 'react'
 import BookingForm from './BookingForm'
-import { Heading } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
+import {submitAPI, fetchAPI} from './APIs'
 
-const Confirmation = () => {
-    return (
-        <Heading>Thank you for reservation</Heading>
-    )
+const ACTIONS = {
+    ADD_BOOKING: "ADD_BOOKING"
 }
 
-
-const BookingPage = () => {
-    const initialTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"]
-    const [availableTimes, dispatch] = useReducer(updateTimes, [...initialTimes]);
-    const mm= new Date().toLocaleString("en-US", { month: "long" });
-    const dd = new Date().toLocaleString("en-US", { day : '2-digit'});
-
-    function updateTimes(availableTimes, action) {
-        if(action.type === "ADD_BOOKING") {
-            return {
-                ...availableTimes.pop()
-
-            }
+const updateTimes = (availableTimes, action) => {
+        console.log("update===")
+        console.log(action)
+        switch (action.type) {
+            case ACTIONS.ADD_BOOKING :
+                return [...availableTimes,availableTimes.pop(action.payload)];
+            default :
+                return availableTimes;
         };
     };
 
-    function initializeTimes() {
+const BookingPage = () => {
+    const date= new Date();
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(date));
+    const navigate = useNavigate();
+
+    function submitForm(formData) {
+        if (submitAPI(formData)) {
+            console.log("submit===")
+            console.log(formData.time);
+            navigate("confirmation");
+            dispatch({ type: ACTIONS.ADD_BOOKING, payload: formData.time})
+        }
+    }
+    //form reducer
+    function initializeTimes(date) {
+        return fetchAPI(date);
     }
 
-    console.log(mm);
-    console.log(dd);
-
-    return (  
+    return (
         <div>
-            <BookingForm availableTimes={availableTimes} />
+            <BookingForm availableTimes={[...availableTimes]} submitForm={submitForm} dispatch={dispatch} />
         </div>
     )
 }
+
 
 export default BookingPage;

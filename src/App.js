@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Homepage from './components/main/Homepage.js';
 import BookingPage from './components/booking/BookingPage';
 import OnlineOrder from './components/online/OnlineOrder.js'
+import ConfirmedBooking from './components/booking/ConfirmedBooking';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<About />}/>
             <Route path="/booking" element={<BookingPage />}/>
             <Route path="/onlineOrder" element={<OnlineOrder />}/>
+            <Route path="/booking/confirmation" element={<ConfirmedBooking />} />
           </Routes>
         {/* <Homepage /> */}
         <Footer />
